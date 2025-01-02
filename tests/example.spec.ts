@@ -11,6 +11,8 @@ test('has title', async ({ page }) => {
 
   await expect(page).toHaveTitle(/playwright - Google/);
 
- const text = await page.getByRole('link', { name: 'テスト自動化 - Playwright' }).innerText();
+  const text = await page
+    .getByRole('link', { name: 'テスト自動化 - Playwright' })
+    .innerText();
   expect(text).toContain('ベストプラクティス');
 });
